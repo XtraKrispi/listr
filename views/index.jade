@@ -1,0 +1,23 @@
+extends layout
+
+block css
+  link(rel='stylesheet', href='/lib/bootstrap/css/bootstrap.css')
+
+block body
+  .navbar.navbar-fixed-top(ng-controller="NavCtrl")
+    .navbar-inner
+      .container
+        a.brand(href="/") 
+          |Title
+        ul.nav
+          li(ng-repeat="navItem in navItems", ng-class="{active: isActive(navItem)}")
+            a(href="{{navItem.url}}")
+              |{{navItem.title}}
+
+  div(ng-view)
+
+  script(src='/lib/jquery/jquery-1.9.1.js')
+  script(src='/lib/bootstrap/js/bootstrap.js')
+  script(src='/lib/angular/angular.js')
+  script(src='/js/app.js')
+  script(src='/js/controllers.js')
