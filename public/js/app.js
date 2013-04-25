@@ -1,4 +1,4 @@
-var listrApp = angular.module('listrApp', ['Controllers']);
+var listrApp = angular.module('listrApp', ['Controllers', 'ListsServices', 'ListsControllers']);
 
 listrApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 	$routeProvider
